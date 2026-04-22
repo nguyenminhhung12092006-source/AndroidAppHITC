@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.bumptech.glide.Glide;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -28,15 +29,19 @@ public class PaymentActivity extends AppCompatActivity {
         Product product = (Product) getIntent().getSerializableExtra("product");
 
         if (product != null) {
-            imageView.setImageResource(product.getImageResource());
+            // Sử dụng Glide để load ảnh từ URL thay vì resource ID
+            Glide.with(this)
+                    .load(product.getImageUrl())
+                    .placeholder(android.R.drawable.ic_menu_gallery)
+                    .into(imageView);
+                    
             textViewName.setText(product.getName());
             textViewPrice.setText(product.getPrice());
             
             // Hiển thị tiền hàng
             textViewSubtotal.setText(product.getPrice());
             
-            // Ở bản demo này, chúng ta chỉ hiển thị text. 
-            // Nếu muốn cộng tiền phí ship 30k vào giá trị số, cần xử lý chuỗi VNĐ.
+            // Hiển thị tổng tiền
             textViewTotalAmount.setText(product.getPrice()); 
             textViewTotalBottom.setText(product.getPrice());
         }

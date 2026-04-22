@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -32,7 +33,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product product = productList.get(position);
         holder.textViewName.setText(product.getName());
         holder.textViewPrice.setText(product.getPrice());
-        holder.imageView.setImageResource(product.getImageResource());
+        
+        // Dùng Glide để load ảnh từ URL API
+        Glide.with(holder.itemView.getContext())
+                .load(product.getImageUrl())
+                .placeholder(android.R.drawable.ic_menu_gallery)
+                .into(holder.imageView);
 
         // Click vào toàn bộ item để xem chi tiết
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +50,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             }
         });
 
-        // Click vào nút "Thêm vào giỏ" (Hiện tại là ImageButton)
+        // Click vào nút "Thêm vào giỏ"
         holder.buttonAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +68,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textViewName, textViewPrice;
-        ImageButton buttonAddToCart; // Đã đổi từ Button sang ImageButton để không bị crash
+        ImageButton buttonAddToCart;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);

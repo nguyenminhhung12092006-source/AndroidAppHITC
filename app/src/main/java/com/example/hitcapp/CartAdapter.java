@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
@@ -34,7 +35,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         Product product = cartItems.get(position);
-        holder.imageView.setImageResource(product.getImageResource());
+        
+        // Dùng Glide để load ảnh từ URL giống như trong ProductAdapter
+        Glide.with(holder.itemView.getContext())
+                .load(product.getImageUrl())
+                .placeholder(android.R.drawable.ic_menu_gallery)
+                .into(holder.imageView);
+
         holder.textViewName.setText(product.getName());
         holder.textViewPrice.setText(product.getPrice());
 
