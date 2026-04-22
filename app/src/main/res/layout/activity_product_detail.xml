@@ -8,7 +8,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -16,111 +18,236 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <!-- Area Hình ảnh cao cấp -->
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="4dp"
-                app:strokeWidth="0dp">
+                android:layout_height="420dp"
+                android:background="#F9F9F9">
 
                 <ImageView
                     android:id="@+id/imageViewDetail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="16dp"
+                    android:padding="40dp"
                     android:scaleType="fitCenter"
-                    android:src="@mipmap/ic_launcher" />
-            </com.google.android.material.card.MaterialCardView>
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <ImageButton
+                    android:id="@+id/buttonBack"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="4dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/buttonFavorite"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="4dp"
+                    android:src="@android:drawable/btn_star_big_off"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#FF5252" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Nội dung chi tiết -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/white"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="28dp"
+                android:layout_marginTop="-30dp">
 
                 <TextView
                     android:id="@+id/textViewNameDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tên điện thoại"
-                    android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:text="iPhone 15 Pro Max"
+                    android:textColor="#1A1A1A"
+                    android:textSize="30sp"
+                    android:lineSpacingMultiplier="1.1"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewPriceDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="0 VNĐ"
+                    android:layout_marginTop="12dp"
+                    android:text="25.000.000 VNĐ"
                     android:textColor="#E91E63"
-                    android:textSize="22sp"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
+
+                <!-- Thông số nhanh với Icon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="#777777" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="48 MP"
+                            android:textColor="#333333"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_lock_power_off"
+                            app:tint="#777777" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="4422 mAh"
+                            android:textColor="#333333"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_menu_info_details"
+                            app:tint="#777777" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="6.7 inch"
+                            android:textColor="#333333"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#EEEEEE" />
+                    android:layout_marginVertical="30dp"
+                    android:background="#F0F0F0" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/description_label"
-                    android:textColor="@color/black"
+                    android:text="Mô tả sản phẩm"
+                    android:textColor="#1A1A1A"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:lineSpacingExtra="4dp"
-                    android:text="@string/product_description"
+                    android:layout_marginTop="14dp"
+                    android:lineSpacingExtra="8dp"
+                    android:text="Điện thoại thông minh cao cấp nhất với khung titan siêu bền, chip A17 Pro mạnh mẽ và hệ thống camera chuyên nghiệp. Màn hình Super Retina XDR với công nghệ ProMotion cho trải nghiệm cực kỳ mượt mà."
                     android:textColor="#666666"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Màu sắc khả dụng"
+                    android:textColor="#1A1A1A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+                    <View android:layout_width="30dp" android:layout_height="30dp" android:layout_marginEnd="12dp" android:background="#3C3C3D" />
+                    <View android:layout_width="30dp" android:layout_height="30dp" android:layout_marginEnd="12dp" android:background="#E2E3E4" />
+                    <View android:layout_width="30dp" android:layout_height="30dp" android:layout_marginEnd="12dp" android:background="#BAB5AC" />
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+    <!-- Bottom Bar Cực Đẹp -->
+    <androidx.cardview.widget.CardView
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="16dp"
-        android:orientation="horizontal"
-        android:padding="12dp"
+        app:cardElevation="24dp"
+        app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/buttonAddToCartDetail"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:text="@string/add_to_cart"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:cornerRadius="12dp"
-            app:strokeColor="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="18dp">
 
-        <Button
-            android:id="@+id/buttonBuyNowDetail"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="#FFC107"
-            android:text="@string/buy_now"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:cornerRadius="12dp" />
+            <ImageButton
+                android:id="@+id/buttonAddToCartDetail"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/edittext_background"
+                android:backgroundTint="#F5F5F5"
+                android:src="@drawable/ic_shopping_cart"
+                app:tint="@color/black" />
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonBuyNowDetail"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:text="MUA NGAY"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
