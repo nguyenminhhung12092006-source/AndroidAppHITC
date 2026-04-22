@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         Button buttonLogin = findViewById(R.id.buttonLogin);
         TextView textViewSignUp = findViewById(R.id.textViewSignUp);
 
+        // Nhấn đăng nhập là vào thẳng trang Home luôn
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // Nhấn vào "Đăng ký ngay" để sang trang Register
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

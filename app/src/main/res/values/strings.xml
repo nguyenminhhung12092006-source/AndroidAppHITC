@@ -1,3 +1,52 @@
 <resources>
     <string name="app_name">HITCApp</string>
+    
+    <!-- Màn hình Đăng nhập/Đăng ký -->
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="no_account">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="has_account">Đã có tài khoản? Đăng nhập</string>
+
+    <!-- Màn hình chính & Sản phẩm -->
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="product_list">Danh sách sản phẩm</string>
+    <string name="discover_products">Khám phá sản phẩm</string>
+    <string name="search_hint">Tìm kiếm sản phẩm...</string>
+    
+    <!-- Chi tiết sản phẩm -->
+    <string name="product_detail">Chi tiết sản phẩm</string>
+    <string name="description_label">Mô tả:</string>
+    <string name="product_description">Điện thoại thông minh cao cấp với các tính năng mới nhất và hiệu năng tuyệt vời. Phù hợp cho mọi nhu cầu của bạn.</string>
+    <string name="buy_now">Mua ngay</string>
+
+    <!-- Thanh toán -->
+    <string name="checkout">Thanh toán</string>
+    <string name="delivery_address_hint">Địa chỉ giao hàng</string>
+    <string name="phone_number_hint">Số điện thoại</string>
+    <string name="payment_method">Phương thức thanh toán</string>
+    <string name="cod">Thanh toán khi nhận hàng (COD)</string>
+    <string name="online_payment">Chuyển khoản / Thẻ tín dụng</string>
+    <string name="confirm_payment">Xác nhận thanh toán</string>
+    <string name="order_success">Đặt hàng thành công!</string>
+
+    <!-- Giỏ hàng -->
+    <string name="cart_title">Giỏ hàng của bạn</string>
+    <string name="empty_cart">Giỏ hàng trống</string>
+    <string name="total_amount">Tổng cộng:</string>
+
+    <!-- Dữ liệu sản phẩm -->
+    <string name="product_iphone_15_pro_name">iPhone 15 Pro</string>
+    <string name="product_iphone_15_pro_price">25.000.000 VNĐ</string>
+    <string name="product_samsung_s24_name">Samsung Galaxy S24</string>
+    <string name="product_samsung_s24_price">20.000.000 VNĐ</string>
+    <string name="product_pixel_8_name">Google Pixel 8</string>
+    <string name="product_pixel_8_price">17.500.000 VNĐ</string>
+    <string name="product_xiaomi_14_name">Xiaomi 14</string>
+    <string name="product_xiaomi_14_price">15.000.000 VNĐ</string>
+    <string name="product_oppo_find_x7_name">Oppo Find X7</string>
+    <string name="product_oppo_find_x7_price">16.000.000 VNĐ</string>
+    <string name="product_vivo_x100_name">Vivo X100</string>
+    <string name="product_vivo_x100_price">15.500.000 VNĐ</string>
 </resources>
